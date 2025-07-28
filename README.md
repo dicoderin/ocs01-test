@@ -1,47 +1,34 @@
-Pastikan Anda telah menginstal Rust. Jika belum, Anda dapat menginstalnya menggunakan perintah berikut:
-```bash
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
-```bash
-source $HOME/.cargo/env
-```
+## Latest task on octra 
 
-Langkah-langkah
- * Kloning Repositori
-   Gunakan perintah git clone untuk menyalin repositori ke komputer lokal Anda:
-   ```bash
-   git clone https://github.com/octra-labs/ocs01-test.git
-   ```
+Note : github codespace uses Linux commands 
 
- * Masuk ke Direktori Proyek
-   Pindah ke direktori proyek yang baru saja Anda kloning:
-   cd ocs01-test
+1. Install Rust
+macOS/Linux: 
+```curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env```   
 
- * Bangun Proyek
-   Gunakan cargo build untuk membangun proyek. Perintah --release akan membuat versi yang dioptimalkan untuk produksi:
-   ```bash
-   cargo build --release
-   ```
+ Windows: Download and install from https://www.rust-lang.org/tools/install (choose 64-bit or 32-bit based on your system).   
 
- * Pengaturan
-   Salin file antarmuka kontrak ke direktori utama proyek:
-   ```bash
-   cp EI/exec_interface.json
-   ```
+2. clone the repo enter the directory then build (Rust is required for the build to work (because of the cargo command). ```git clone https://github.com/octra-labs/ocs01-test.git```
+```cd ocs01-test```
+```cargo build --release```   
 
- * Siapkan File yang Dibutuhkan
-   Pastikan dua file berikut ada di direktori yang sama dengan biner yang akan Anda jalankan:
-   * wallet.json: Buat file ini dengan kredensial dompet Anda.
-   * exec_interface.json: Salin dari folder EI/.
- * Jalankan Aplikasi
-   Salin biner rilis dan file antarmuka eksekusi (exec_interface.json) ke direktori CLI Anda. Biner rilis terletak di ./target/release/ocs01-test. Setelah itu, jalankan aplikasi:
-   ```bash
-   ./target/release/ocs01-test
-   ```
+3.Copy the contract interface
 
-Setelah menjalankan perintah di atas, Anda akan melihat menu interaktif yang dapat Anda gunakan untuk berinteraksi dengan kontrak pintar.  
+macOS/Linux:
+```cp EI/exec_interface.json .```     
 
+Windows:```copy EI\exec_interface.json .```    
 
-kontrak pintar yang diuji adalah octBUHw585BrAMPMLQvGuWx4vqEsybYH9N7a3WNj1WBwrDn. 
+4. Create your wallet.json
+File using nano wallet.json a new file will be created then type or paste  your details. 
+Then use ctrl +0 to save then enter to exit. 
 
-### ❌Jangan ubah file exec_interface.json.
+note your wallet.json file must be in the same dir as ``exec_interface.json.``   
+
+5. Run the app
+mac/linux: ```./target/release/ocs01-test```
+
+windows: ```target\release\ocs01-test.exe``` 
+
+ when done proceed with step 2 and 3 here https://discordapp.com/channels/1038740318255841280/1186941987719495720/1399143680899547298
